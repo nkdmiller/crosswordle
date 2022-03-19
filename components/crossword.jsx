@@ -13,7 +13,7 @@ const Crossword = ({}) => {
     }
   })
   return(
-  <div class="container">
+  <div className="container">
     {createSquares}
   </div>
 )};
