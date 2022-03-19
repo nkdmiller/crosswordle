@@ -14,3 +14,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  height: 250px;
+  width: 250px;
+}
+.crossword-square {
+  border: 2px solid;
+  height: 50px;
+  width: 50px;
+}
+
+.blank-square {
+  background-color: black;
+  height: 50px;
+  width: 50px;
+}

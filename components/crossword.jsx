@@ -1,13 +1,21 @@
-import React from 'react'
+import React from 'react';
+import crossword from '../data/puzzle';
 
 const click = () => {
-  console.log("hello")
+  console.log(crossword.rows)
 }
 const Crossword = ({}) => {
+  const createSquares = crossword.rows.map(function(r, i) {
+    if (r == " ")
+      return <div className="blank-square" id={"item-" +i} onClick={click}></div>;
+    else {
+      return <div className="crossword-square" onClick={click}></div>;      
+    }
+  })
   return(
-  <svg width="400" height="400">
-    <rect onClick={click} width="50" height="50" />
-  </svg>
+  <div class="container">
+    {createSquares}
+  </div>
 )};
 
 export default Crossword;
