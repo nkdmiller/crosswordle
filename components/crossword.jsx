@@ -28,9 +28,6 @@ const Crossword = () => {
     setVerticalMap(verticalWords);
   }, [])
 
-  console.log(highlightedHorizontalWord);
-  console.log(highlightedVerticalWord)
-
   const verticalWords = {}
   const horizontalWords = {}
 
