@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -27,8 +31,26 @@ a {
   width: 50px;
 }
 
+.horizontal-highlight {
+  background-color: lightcyan;
+}
+
+.vertical-highlight {
+  background-color: lightyellow;
+}
+
+.vertical-highlight.horizontal-highlight {
+  background-color: rgb(228, 255, 228);
+}
+
 .blank-square {
   background-color: black;
   height: 50px;
   width: 50px;
+}
+
+.box {
+  height: 500px;
+  width: 500px;
+  background-color: white;
 }
