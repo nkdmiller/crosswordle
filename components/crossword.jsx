@@ -99,7 +99,7 @@ const Crossword = () => {
           router.push("/");
         }}
       >
-        <div class="box">
+        <div className="box">
         </div>
       </Modal>
     )}
