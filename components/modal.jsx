@@ -18,7 +18,7 @@ const Modal = ({ onClose = () => {}, children }) => {
         className="fixed inset-0 bg-gray-800/60"
       />
       <div className="relative flex items-center justify-center w-1/2">
-        <div class="box">
+        <div className="box">
         <Link href="/">X</Link>
           {children}
         </div>
