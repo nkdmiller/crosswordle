@@ -50,7 +50,28 @@ a {
 }
 
 .box {
-  height: 500px;
-  width: 500px;
+  height: 80vh;
+  width: 50vh;
   background-color: white;
+}
+
+.board-row {
+  display: inline-flex;
+}
+
+.guess {
+  height: 5vh;
+  width: 5vh;
+  margin: 2.5vh;
+  border: solid 1px;
+  border-color: black;
+  background-color: gray;
+}
+
+.correct {
+  background-color: green;
+}
+
+.misplaced {
+  background-color: yellow;
 }

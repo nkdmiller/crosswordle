@@ -1,9 +1,38 @@
 {
+  "words": [
+    {
+      "number": 1,
+      "word": "ARISE",
+      "direction": "vertical"
+    },
+    {
+      "number": 2,
+      "word": "HELLO",
+      "direction": "vertical"
+    },
+    {
+      "number": 3,
+      "word": "IGLOO",
+      "direction": "horizontal"
+    },
+    {
+      "number": 4,
+      "word": "PLOYS",
+      "direction": "vertical"
+    }
+  ],
   "rows": [
     ["A", " ", "H", " ", "P"],
     ["R", " ", "E", " ", "L"],
     ["I", "G", "L", "O", "O"],
     ["S", " ", "L", " ", "Y"],
     ["E", " ", "O", " ", "S"]
+  ],
+  "wordMap": [
+    [[1], [0], [2], [0], [4]],
+    [[1], [0], [2], [0], [4]],
+    [[1, 3], [3], [2, 3], [3], [3, 4]],
+    [[1], [0], [2], [0], [4]],
+    [[1], [0], [2], [0], [4]]
   ]
 }

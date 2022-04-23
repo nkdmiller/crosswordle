@@ -1,9 +1,18 @@
 import { useState, useRef } from 'react'
 import { Dialog } from '@headlessui/react'
 import Link from "next/link";
+import Board from './board';
 
-const Modal = ({ onClose = () => {}, children }) => {
+const Modal = ({ onClose = () => {}, words, wordMap, handleAttempt }) => {
   let overlayRef = useRef();
+  const queryParams = new URLSearchParams(window.location.search)
+  const row = queryParams.get("row");
+  const column = queryParams.get("column");
+  const wordNumber = wordMap[row][column][0];
+  const word = words.find(w => {
+    return wordNumber == w.number;
+  });
+
 
   return(
     <Dialog
@@ -19,8 +28,8 @@ const Modal = ({ onClose = () => {}, children }) => {
       />
       <div className="relative flex items-center justify-center w-1/2">
         <div className="box">
-        <Link href="/">X</Link>
-          {children}
+          <Link href="/">X</Link>
+          <Board word={word} handleAttempt={handleAttempt} />
         </div>
       </div>
     </Dialog>
