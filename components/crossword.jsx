@@ -195,7 +195,7 @@ const Crossword = () => {
     })
   });
   return(
-    <div class="crossword-board">
+    <div className="crossword-board">
       <div>
         {router.query.row && (
           <Modal
@@ -212,17 +212,17 @@ const Crossword = () => {
           </Modal>
         )}
         {!solved && (
-          <div class="attempt-number">{"Number of Attempts: " + attempts}</div>
+          <div className="attempt-number">{"Number of Attempts: " + attempts}</div>
         )}
         {solved && (
-          <div class="solved-message">{"You solved it in " + attempts + " moves!"} </div>
+          <div className="solved-message">{"You solved it in " + attempts + " moves!"} </div>
         )}
         <div className="container">
           {createSquares}
         </div>
       </div>
       <div>
-        <button type="button" onClick={resetBoard} class="reset-button">Reset</button>
+        <button type="button" onClick={resetBoard} className="reset-button">Reset</button>
       </div>
     </div>
 )};
