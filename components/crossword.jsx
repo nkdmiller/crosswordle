@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import crossword from '../data/puzzle';
 import {useRouter} from "next/router";
-import Modal from "./modal";
+import Modal from "./Modal";
 import Link from "next/link";
 
 const Crossword = () => {

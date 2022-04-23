@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Crossword from '../components/crossword'
+import Crossword from '../components/Crossword'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
