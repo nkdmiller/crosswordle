@@ -1,13 +1,13 @@
-import { useState, useRef } from 'react'
-import { Dialog } from '@headlessui/react'
-import Link from "next/link";
 import Guess from './Guess';
 
 const BoardRow = ({ index, attempt, answer }) => {
 
+  //If the attempt is blank create a mock attempt with all spaces
   if (attempt.length < 5){
     attempt = "     "
   }
+
+  //Determine which letter are correct, incorrect or misplaced
   let availableLetters = [];
   let correctSpaces = [];
   let misplacedSpaces = [];
@@ -28,12 +28,13 @@ const BoardRow = ({ index, attempt, answer }) => {
     }
   }
 
+  //Create the squares with css depending on the correctness of the letter
   const createGuessSquares = attempt.split('').map(function(letter, i) {
     return (
       <Guess
         value={letter}
         key={"guess-" + i} 
-        guessClass={ correctSpaces.includes(i) ? "guess correct" : (misplacedSpaces.includes(i) ? "guess misplaced" : "guess incorrect")}
+        guessClass={ letter == " " ? "guess" : correctSpaces.includes(i) ? "guess correct" : (misplacedSpaces.includes(i) ? "guess misplaced" : "guess incorrect")}
       />
     )
   });

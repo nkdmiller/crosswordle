@@ -29,6 +29,8 @@ a {
   border: 2px solid;
   height: 50px;
   width: 50px;
+  font-size: 2rem;
+  padding: 0;
 }
 
 .horizontal-highlight {
@@ -40,7 +42,7 @@ a {
 }
 
 .vertical-highlight.horizontal-highlight {
-  background-color: rgb(228, 255, 228);
+  background-color: lightyellow;;
 }
 
 .blank-square {
@@ -50,9 +52,16 @@ a {
 }
 
 .box {
-  height: 80vh;
+  height: 90vh;
   width: 50vh;
+  min-height: 666px;
+  min-width: 535px;
   background-color: white;
+  font-size: 1.5rem;
+}
+
+.board {
+  text-align: center;
 }
 
 .board-row {
@@ -62,10 +71,16 @@ a {
 .guess {
   height: 5vh;
   width: 5vh;
-  margin: 2.5vh;
+  min-height: 37px;
+  min-width: 37px;
+  margin: max(2.5vh, 18.5px);
   border: solid 1px;
   border-color: black;
-  background-color: gray;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 
 .correct {
@@ -74,4 +89,99 @@ a {
 
 .misplaced {
   background-color: yellow;
+}
+
+.incorrect {
+  background-color: lightcoral;
+}
+
+.crossword-board {
+  text-align: center;
+}
+
+.attempt-number {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.reset-button {
+  background-color: maroon;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.form-div {
+  text-align: center;
+}
+
+.exit {
+  width: 17px;
+  font-size: 15px;
+  margin-left: 18.5px;
+  margin-top: 18.5px;
+  padding: 1px 1px;
+}
+
+/* Underline styling inspired by: https://stackoverflow.com/questions/54526082/changing-font-in-input-field-with-underline-under-each-character */
+.board-input {
+  display: inline-block;
+  border: none;
+  width: 7.4ch;
+  background: repeating-linear-gradient(90deg, black 0, black 1ch, transparent 0, transparent 1.5ch) 0 100%/ 10ch 2px no-repeat;
+  font: 3rem 'Ubuntu Mono', monospace;
+  letter-spacing: 0.5ch;
+  margin: 20px;
+}
+
+.submit-button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.solved-message {
+  font-size: 50px;
+  color: green;
+}
+
+.modal-background {
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  display: flex;
+  position: relative;
+}
+
+.modal-overlay {
+  background-color: gray;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: fixed;
+}
+
+.modal-container {
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  display: flex;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: fixed;
 }

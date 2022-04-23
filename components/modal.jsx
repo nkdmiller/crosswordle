@@ -1,10 +1,12 @@
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import { Dialog } from '@headlessui/react'
 import Link from "next/link";
 import Board from './Board';
 
 const Modal = ({ onClose = () => {}, words, wordMap, handleAttempt }) => {
   let overlayRef = useRef();
+
+  //Get the word based on the row and column query params
   const queryParams = new URLSearchParams(window.location.search)
   const row = queryParams.get("row");
   const column = queryParams.get("column");
@@ -20,15 +22,17 @@ const Modal = ({ onClose = () => {}, words, wordMap, handleAttempt }) => {
       open={true}
       onClose={onClose}
       initialFocus={overlayRef}
-      className="fixed inset-0 z-10 flex items-center justify-center"
+      className="modal-container"
     >
       <Dialog.Overlay
         ref={overlayRef}
-        className="fixed inset-0 bg-gray-800/60"
+        className="modal-overlay"
       />
-      <div className="relative flex items-center justify-center w-1/2">
+      <div className="modal-background">
         <div className="box">
-          <Link href="/">X</Link>
+          <div className="exit">
+            <Link href="/">X</Link>
+          </div>
           <Board word={word} handleAttempt={handleAttempt} />
         </div>
       </div>
