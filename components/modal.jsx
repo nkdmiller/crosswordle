@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { Dialog } from '@headlessui/react'
 import Link from "next/link";
-import Board from './board';
+import Board from './Board';
 
 const Modal = ({ onClose = () => {}, words, wordMap, handleAttempt }) => {
   let overlayRef = useRef();

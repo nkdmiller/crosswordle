@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { Dialog } from '@headlessui/react'
 import Link from "next/link";
-import Guess from './guess';
+import Guess from './Guess';
 
 const BoardRow = ({ index, attempt, answer }) => {
 
@@ -22,20 +22,17 @@ const BoardRow = ({ index, attempt, answer }) => {
     }
   }
 
-  console.log("correct " + correctSpaces)
-  console.log("unchecked " + uncheckedSpaces)
-  console.log("available " + availableLetters)
   for (let space of uncheckedSpaces) {
     if (availableLetters.includes(attempt[space])) {
       misplacedSpaces.push(space);
     }
   }
-  console.log(misplacedSpaces)
 
   const createGuessSquares = attempt.split('').map(function(letter, i) {
     return (
-      <Guess 
-        value={letter} 
+      <Guess
+        value={letter}
+        key={"guess-" + i} 
         guessClass={ correctSpaces.includes(i) ? "guess correct" : (misplacedSpaces.includes(i) ? "guess misplaced" : "guess incorrect")}
       />
     )

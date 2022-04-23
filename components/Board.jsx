@@ -29,7 +29,7 @@ const Board = ({ word, handleAttempt }) => {
       <BoardRow index={5} attempt={word.attempts[5]} answer={word.word} />
       {!word.solved && (
         <form onSubmit={handleSubmit}>
-          <input type="text" value={guess} onChange={handleChange} className="boardInput" maxlength="5" disabled={word.solved}/>
+          <input type="text" value={guess} onChange={handleChange} className="boardInput" maxLength="5" disabled={word.solved}/>
           <input type="submit" value="Submit" disabled={guess.length == 5 ? false : true}/>
         </form>
       )}

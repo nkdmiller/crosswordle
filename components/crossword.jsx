@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import crossword from '../data/puzzle';
 import {useRouter} from "next/router";
-import Modal from "./modal";
+import Modal from "./Modal";
 import Link from "next/link";
 import { createContext } from 'react';
 
@@ -123,7 +123,6 @@ const Crossword = () => {
   const checkForSolution = () => {
     let isSolved = words.length > 0 ? true : false;
     words.forEach((word) => {
-      console.log(word)
       if (word.solved == false) {
         isSolved = false;
       }
@@ -166,8 +165,8 @@ const Crossword = () => {
       }
 
       return (
-        <Link href={"/?row=" + r + "&column=" + c + "&number=" + value[0]}>
-          <div className={"crossword-square " + (isHighlightVertical ? 'vertical-highlight ' : ' ') + (isHighlightHorizontal ? 'horizontal-highlight' : '')} row={r} column={c} word-value={value} key={r + ":" + c} onClick={highlightWord} onMouseEnter={highlightWord}>{crosswordBoard[r][c]}</div>
+        <Link href={"/?row=" + r + "&column=" + c + "&number=" + value[0]} key={"square-" + r + ":" + c} >
+          <div key={"square-" + r + ":" + c} className={"crossword-square " + (isHighlightVertical ? 'vertical-highlight ' : ' ') + (isHighlightHorizontal ? 'horizontal-highlight' : '')} row={r} column={c} word-value={value} onClick={highlightWord} onMouseEnter={highlightWord}>{crosswordBoard[r][c]}</div>
         </Link>
       )  
     })
